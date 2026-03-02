@@ -1,0 +1,7 @@
+## Interface: 20505
+## Title: Rogue Energy Ticker
+## Notes: Adds an energy ticker to the player's energy bar, if logged into a rogue.
+## Author: Bilal Akil
+## Version: 1.0.0
+
+Core.lua
