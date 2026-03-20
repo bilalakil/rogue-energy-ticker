@@ -42,9 +42,10 @@ function RogueEnergyTicker:UNIT_POWER_UPDATE(unit, powerType)
     if unit ~= "player" or powerType ~= "ENERGY" then return end
 
     local currentEnergy = UnitPower("player", Enum.PowerType.Energy)
-    self:Trace("Energy updated, from", self.lastEnergy, "to", currentEnergy)
+    local delta = currentEnergy - self.lastEnergy
+    self:Trace("Energy updated, from", self.lastEnergy, "to", currentEnergy, ", delta:", delta)
 
-    if currentEnergy - self.lastEnergy == EXPECTED_ENERGY_GAINED then
+    if delta == 20 or delta == 21 or delta >= 40 then
         self.lastGainedEnergyTime = GetTime()
     end
 
